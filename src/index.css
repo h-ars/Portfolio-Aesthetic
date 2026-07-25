@@ -67,8 +67,8 @@ body {
   }
 
   #welcome {
-    @apply text-[#EDE6D3] [-webkit-text-stroke:0.75px_#D9CBB0] [paint-order:stroke_fill] flex flex-col justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none max-sm:h-screen max-sm:w-full max-sm:px-10;
-
+    @apply text-[#EDE6D3] [-webkit-text-stroke:0.75px_#D9CBB0] [paint-order:stroke_fill] flex flex-col justify-center items-center absolute top-2/3 left-4/5 -translate-x-1/2 -translate-y-1/2 select-none max-sm:h-screen max-sm:w-full max-sm:px-10 px-[100px] pt-[60px] pb-[64px];
+    
     .small-screen {
       @apply sm:hidden m-7 bg-red-300/20 backdrop-blur-lg p-3 rounded-md absolute top-10;
 
