@@ -1,4 +1,5 @@
 import { WindowControls } from "#components"
+import GithubProfile from "#components/GithubProfile";
 import WindowWrapper from "#hoc/WindowWrapper";
 import { ChevronLeft, PanelLeft, ChevronRight, ShieldHalf, Search, Share, Plus, Copy } from "lucide-react";
 
@@ -30,6 +31,10 @@ const Safari = () => {
                 <Plus className="icon"/>
                 <Copy className="icon"/>
             </div>
+        </div>
+
+        <div id="window-content" className="flex-1 overflow-y-auto p-6">
+            <GithubProfile />
         </div>
     </>
   )

@@ -394,3 +394,56 @@ body {
     }
   }
 }
+
+/* everything under is github-page's css */
+#window-content {
+  background-image: url(images/lk.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.github-widget {
+  @apply flex gap-6 max-w-[800px] mx-auto;
+}
+
+.gh-profile-card {
+  @apply min-w-[233px] flex flex-col items-start gap-4 p-5 rounded-2xl;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.gh-avatar {
+  @apply w-48 h-48 rounded-full object-cover;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.gh-name { @apply font-semibold text-lg leading-tight; }
+.gh-handle { @apply text-sm opacity-70; }
+.gh-bio { @apply text-sm mt-1 opacity-80; }
+
+.gh-stats { @apply flex items-center gap-3 mt-2 text-sm; }
+.gh-stat-pill {
+  @apply flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.gh-repo-list { @apply flex flex-col gap-2; }
+
+.gh-repo-item {
+  @apply flex items-center justify-between p-3 rounded-xl transition-all duration-200;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.gh-repo-item:hover {
+  background: rgba(150, 194, 241, 0.555);
+  transform: translateY(-1px);
+}
+
+.gh-repo-name { @apply font-medium text-sm flex items-center gap-1; }
+.gh-repo-desc { @apply text-xs opacity-60 line-clamp-1 mt-0.5; }
+.gh-repo-meta { @apply flex items-center gap-3 text-xs opacity-70; }
+.gh-lang-dot { @apply inline-block w-2 h-2 rounded-full mr-1; }
