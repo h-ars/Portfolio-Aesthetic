@@ -1,16 +1,23 @@
 import { useRef } from "react"
 import { Tooltip } from "react-tooltip";
 import gsap from "gsap";
+import { useEffect } from "react";
 
 import { dockApps } from "#constants";
 import { useGSAP } from "@gsap/react";
+import useWindowStore from "#store/window";
 
 const Dock = () => {
+    const { openWindow, closeWindow, windows } = useWindowStore();
     const dockRef = useRef(null);
+
+    // useEffect(() => {
+    //     console.log('Windows state updated:', windows);
+    // }, [windows]); this was to check whether the state was being updated at the middleware of immer.
 
     useGSAP(() => {
         const dock = dockRef.current;
-        if(!dock) return () => {};
+        if(!dock) return;
 
         const icons = dock.querySelectorAll(".dock-icon");
 
@@ -52,7 +59,22 @@ const Dock = () => {
         }
     }, [])
 
-    const toggleApp = (app) => {};
+    const toggleApp = (app) => {
+        if(!app.canOpen) return;
+
+        const window = windows[app.id];
+
+        if(!window) {
+            console.error(`window not found for app: ${app.id}`);
+            return;
+        }
+
+        if(window.isOpen) {
+            closeWindow(app.id);
+        } else {
+            openWindow(app.id);
+        }
+    };
 
   return (
     <section id="dock">
@@ -60,7 +82,7 @@ const Dock = () => {
             {dockApps.map(({id, name, icon, canOpen}) => (
                 <div key={id} className="relative flex justify-center">
                     <button
-                        type="button" className="dock-icon" aria-label={name} data-tooltip-id="dock-tooltip" data-tooltip-content={name} data-tooltip-delay-show={150} disabled={!canOpen} onClick={() => ({id, canOpen})}
+                        type="button" className="dock-icon" aria-label={name} data-tooltip-id="dock-tooltip" data-tooltip-content={name} data-tooltip-delay-show={150} disabled={!canOpen} onClick={() => toggleApp({id, canOpen})}
                     >
                         <img src={`/images/${icon}`} alt={name} loading="lazy" className={canOpen ? '' : "opacity-60 scale-85"} />
                     </button>
