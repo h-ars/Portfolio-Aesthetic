@@ -159,35 +159,35 @@ const photosLinks = [
 const gallery = [
   {
     id: 1,
-    img: "/images/gal-1.png",
+    img: "/images/gal-1.jpeg",
   },
   {
     id: 2,
-    img: "/images/gal-2.png",
+    img: "/images/gal-2.jpeg",
   },
   {
     id: 3,
-    img: "/images/gal-3.png",
+    img: "/images/gal-3.jpeg",
   },
   {
     id: 4,
-    img: "/images/gal-4.png",
+    img: "/images/gal-4.jpeg",
   },
   {
     id: 5,
-    img: "/images/gal-5.png",
+    img: "/images/gal-5.jpeg",
   },
   {
     id: 6,
-    img: "/images/gal-6.png",
+    img: "/images/gal-6.jpeg",
   },
   {
     id: 7,
-    img: "/images/gal-7.png",
+    img: "/images/gal-7.jpeg",
   },
   {
     id: 8,
-    img: "/images/gal-8.png",
+    img: "/images/gal-8.jpeg",
   },
 ];
 
