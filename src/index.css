@@ -397,7 +397,7 @@ body {
 
 /* everything under is github-page's css */
 #window-content {
-  background-image: url(images/lk.jpg);
+  background-image: url(/images/lk.jpg);
   background-position: center;
   background-size: cover;
 }
