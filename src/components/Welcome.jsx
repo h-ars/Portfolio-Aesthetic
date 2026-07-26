@@ -78,9 +78,9 @@ const setupSectionHover = (section, groups) => {
     });
 
     // --- tunables -------------------------------------------------------------
-    const LENS_BASE_SIZE = 190; // px, spotlight diameter at rest
+    const LENS_BASE_SIZE = 140; // px, spotlight diameter at rest
     const MAX_BLUR = 12;       // px, blur at full intensity
-    const FALLOFF = 15000;     // lower = tighter hover radius, higher = wider
+    const FALLOFF = 20000;     // lower = tighter hover radius, higher = wider
 
     const animateLetter = (span, weight, duration = 0.25) =>
         gsap.to(span, {
@@ -100,7 +100,7 @@ const setupSectionHover = (section, groups) => {
             const cx = l - left + w / 2;
             const cy = t - top + h / 2;
             const distance = Math.hypot(mouseX - cx, mouseY - cy); // 2D, not just horizontal
-            const intensity = Math.exp(-(distance ** 2) / FALLOFF);
+            const intensity = Math.exp(-(distance ** 2) / 10000);
             if (intensity > peakIntensity) peakIntensity = intensity;
 
             const { min, max } = config;
